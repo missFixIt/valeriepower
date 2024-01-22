@@ -1,0 +1,350 @@
+img {
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: rgb(52, 90, 92);
+  background-color: rgb(254, 248, 247);
+  background-image: radial-gradient(
+    circle at 87.5% 30%,
+    #f67aea39 0,
+    #e82cee8e 25%,
+    #ff91009f 50%,
+    #e13f3f74 75%,
+    #7c36c77c 100%
+  );
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 80vw;
+  max-width: 960px;
+  margin-inline: auto;
+  display: grid;
+  /* grid-auto-flow: row; */
+  grid-template:
+    "header header nav"
+    "hero hero hero"
+    "web web web"
+    "photo photo photo"
+    "design design design"
+    "writing writing writing"
+    "performance performance performance"
+    "installation installation installation"
+    "about about about"
+    "cta cta cta"
+    "footer footer footer" / 1fr auto auto;
+}
+
+section,
+header,
+footer {
+  border-color: #fff;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+}
+.container svg {
+  border: none;
+}
+h1 {
+  /* font-size: clamp(3rem, 4rem, 5.5rem); */
+  font-size: clamp(4vw, 6vw, 8vw);
+}
+h2 {
+  /* font-size: clamp(1rem, 2rem, 3.5rem); */
+  color: rgb(52, 90, 92);
+  font-size: 3.5vw;
+}
+p {
+  font-size: clamp(2vw, 4vw, 6vw);
+}
+button {
+  padding: 0.5em 1em;
+  border: 0.2rem solid coral;
+  background-color: coral;
+  color: rgb(223, 255, 255);
+  border-radius: 0.5rem;
+  font-size: clamp(1vmin, 3vmin, 4vmin);
+}
+button:hover {
+  border: 0.2rem solid whitesmoke;
+}
+header {
+  background-color: rgba(255, 255, 0, 0.45);
+  grid-area: header;
+  color: rgb(255, 255, 246);
+  padding: 1vmin;
+  height: 100%;
+}
+header h4 {
+  font-size: 4vmin;
+}
+header h5 {
+  font-size: 2.8vmin;
+}
+nav {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.2vmin;
+  grid-area: nav;
+  background-color: rgba(0, 255, 255, 0.85);
+}
+nav ul {
+  padding: 0px 0px;
+  list-style: none;
+}
+nav li {
+  text-align: center;
+  border: 1px solid whitesmoke;
+}
+nav li:hover {
+  background-color: rgb(255, 255, 255);
+}
+nav li:active {
+  background-color: rgb(201, 180, 180);
+}
+.hero {
+  background-color: rgb(248, 10, 153, 0.5);
+  padding-top: 2em;
+  padding-left: 2em;
+  color: #fff;
+  grid-area: hero;
+}
+.hero h1 {
+  margin: 0;
+  text-wrap: balance;
+  /* text-edge: cap alphabetic; */
+  text-box-trim: both;
+}
+.hero h2 {
+  display: inline-block;
+  padding-bottom: 0;
+}
+.hero .ani1 {
+  animation-name: slide-in-right;
+  animation-duration: 0.5s;
+}
+.hero .ani2 {
+  animation-name: slide-in-right;
+  animation-duration: 1s;
+}
+.hero .ani3 {
+  animation-name: slide-in-right;
+  animation-duration: 2s;
+}
+.hero .ani4 {
+  animation-name: slide-in-right;
+  animation-duration: 3s;
+}
+.hero .anifade {
+  text-box-trim: both;
+  text-box-edge: cap alphabetic;
+  animation-name: fade-in;
+  animation-duration: 3s;
+  font-size: 50vmin;
+  opacity: 0.3;
+  animation-delay: 2.5s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-out;
+  margin-top: -20vmin;
+  margin-bottom: -20rem;
+}
+.hero .ani5 {
+  animation-name: fade-in-full;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-fill-mode: backwards;
+  animation-delay: 3.5s;
+}
+
+.hero button {
+  margin-bottom: 2rem;
+  animation-name: fade-in-full;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+  animation-delay: 5s;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translate(125vw, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+@keyframes fade-in-full {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes flower {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 100%;
+  }
+}
+/* .articles {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: articles;
+} */
+#web {
+  background-color: rgb(255, 0, 0, 0.3);
+  grid-area: web;
+}
+#photo {
+  background-color: rgb(255, 196, 0, 0.3);
+  grid-area: photo;
+}
+#design {
+  background-color: rgb(144, 0, 255, 0.3);
+  grid-area: design;
+}
+#writing {
+  background-color: rgba(0, 221, 255, 0.3);
+  grid-area: writing;
+}
+#performance {
+  background-color: rgb(0, 102, 255, 0.3);
+  grid-area: performance;
+}
+#installation {
+  background-color: rgba(251, 255, 0, 0.307);
+  grid-area: installation;
+}
+#installation p {
+  color: rgb(99, 66, 113);
+}
+
+#about {
+  background-color: rgba(43, 222, 55, 0.3);
+  grid-area: about;
+}
+
+/* .firstblock,
+.secondblock {
+  font-family: sans-serif;
+  background-color: #098cff93;
+  text-wrap: pretty;
+  padding: 0 2em;
+  min-width: 250px;
+} */
+.cta {
+  background-color: rgb(248, 78, 180, 0.5);
+  padding: 2em;
+  color: #fff;
+  grid-area: cta;
+  text-align: right;
+}
+.media-card {
+  display: grid;
+  grid-template-areas: "img text";
+  grid-template-columns: 30% auto;
+  gap: 2em;
+}
+
+.media-card img {
+  grid-area: img;
+  border-radius: 1em;
+  margin: 1em;
+  align-self: center;
+}
+.media-card .text {
+  color: whitesmoke;
+  padding: 2em;
+  grid-area: text;
+}
+.media-card p {
+  /* color: rgb(31, 14, 116); */
+  font-weight: 100;
+  padding-bottom: 0.5em;
+  font-size: 2vmin;
+}
+.media-card a {
+  color: rgb(255, 223, 211);
+  text-decoration: underline;
+}
+footer {
+  background-color: rgba(255, 127, 80, 0.3);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  grid-area: footer;
+  padding: 1.5em;
+  padding-bottom: 2em;
+}
+footer a {
+  color: rgb(66, 96, 96);
+}
+footer a:hover {
+  text-shadow: 2px 2px 5px rgb(66, 96, 96);
+  color: rgb(97, 235, 235);
+}
+@media (width < 600px) {
+  .container {
+    width: 100%;
+  }
+  /* .firstblock {
+    grid-column: 1 / span 8;
+    grid-row: 3 / span 1;
+  }
+
+  .secondblock {
+    grid-column: 1 / span 8;
+    grid-row: 4 / span 1;
+  }
+  .footer {
+    grid-column: 1/9;
+    grid-row: 5/6;
+  } */
+}
+/* 
+@media (400px <= width <= 700px) {
+    body {
+      
+    }
+  }
+@media (700px < width ) {
+    body {
+   
+    }
+  } */
+/* styles from https://www.shapedivider.app/ */
+
+@keyframes wavy-top {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2000px, 0, 0);
+  }
+}

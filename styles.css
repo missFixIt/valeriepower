@@ -10,7 +10,7 @@ body {
   color: rgb(52, 90, 92);
   background-color: rgb(254, 248, 247);
   background-image: radial-gradient(
-    circle at 87.5% 30%,
+    circle at 87.5% 40%,
     #f67aea39 0,
     #e82cee8e 25%,
     #ff91009f 50%,
@@ -19,6 +19,7 @@ body {
   );
   background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -90,96 +91,108 @@ header {
   color: rgb(255, 255, 246);
   padding: 1vmin;
   height: 100%;
+  & h4 {
+    font-size: 4vmin;
+  }
+  & h5 {
+    font-size: 2.8vmin;
+  }
 }
-header h4 {
-  font-size: 4vmin;
-}
-header h5 {
-  font-size: 2.8vmin;
+.mobile-nav-toggle {
+  display: none;
+  /* aspect-ratio: 1; */
+  border: 1px solid whitesmoke;
+  height: 100%;
+  border-radius: 0;
+  align-self: center;
+  &:hover {
+    border: 1px solid whitesmoke;
+  }
 }
 nav {
   font-family: "Courier New", Courier, monospace;
   font-size: 2.2vmin;
   grid-area: nav;
   background-color: rgba(0, 255, 255, 0.85);
+  & ul {
+    padding: 0px 0px;
+    list-style: none;
+  }
+  & li {
+    text-align: center;
+    border: 1px solid whitesmoke;
+  }
+  & li:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  & li:active {
+    background-color: rgb(201, 180, 180);
+  }
 }
-nav ul {
-  padding: 0px 0px;
-  list-style: none;
-}
-nav li {
-  text-align: center;
-  border: 1px solid whitesmoke;
-}
-nav li:hover {
-  background-color: rgb(255, 255, 255);
-}
-nav li:active {
-  background-color: rgb(201, 180, 180);
-}
+
 .hero {
   background-color: rgb(248, 10, 153, 0.5);
   padding-top: 2em;
   padding-left: 2em;
   color: #fff;
   grid-area: hero;
-}
-.hero h1 {
-  margin: 0;
-  text-wrap: balance;
-  /* text-edge: cap alphabetic; */
-  text-box-trim: both;
-}
-.hero h2 {
-  display: inline-block;
-  padding-bottom: 0;
-}
-.hero .ani1 {
-  animation-name: slide-in-right;
-  animation-duration: 0.5s;
-}
-.hero .ani2 {
-  animation-name: slide-in-right;
-  animation-duration: 1s;
-}
-.hero .ani3 {
-  animation-name: slide-in-right;
-  animation-duration: 2s;
-}
-.hero .ani4 {
-  animation-name: slide-in-right;
-  animation-duration: 3s;
-}
-.hero .anifade {
-  text-box-trim: both;
-  text-box-edge: cap alphabetic;
-  animation-name: fade-in;
-  animation-duration: 3s;
-  font-size: 50vmin;
-  opacity: 0.3;
-  animation-delay: 2.5s;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-out;
-  margin-top: -20vmin;
-  margin-bottom: -20rem;
-}
-.hero .ani5 {
-  animation-name: fade-in-full;
-  animation-timing-function: ease-out;
-  animation-duration: 2s;
-  animation-fill-mode: backwards;
-  animation-delay: 3.5s;
-}
 
-.hero button {
-  margin-bottom: 2rem;
-  animation-name: fade-in-full;
-  animation-timing-function: ease-out;
-  animation-duration: 0.5s;
-  animation-fill-mode: backwards;
-  animation-delay: 5s;
-}
+  & h1 {
+    margin: 0;
+    text-wrap: balance;
+    /* text-edge: cap alphabetic; */
+    text-box-trim: both;
+  }
+  & h2 {
+    display: inline-block;
+    padding-bottom: 0;
+  }
+  & .ani1 {
+    animation-name: slide-in-right;
+    animation-duration: 0.5s;
+  }
+  & .ani2 {
+    animation-name: slide-in-right;
+    animation-duration: 1s;
+  }
+  & .ani3 {
+    animation-name: slide-in-right;
+    animation-duration: 2s;
+  }
+  & .ani4 {
+    animation-name: slide-in-right;
+    animation-duration: 3s;
+  }
+  & .anifade {
+    text-box-trim: both;
+    text-box-edge: cap alphabetic;
+    animation-name: fade-in;
+    animation-duration: 3s;
+    font-size: 50vmin;
+    opacity: 0.3;
+    animation-delay: 2.5s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+    margin-top: -20vmin;
+    margin-bottom: -20rem;
+  }
+  & .ani5 {
+    animation-name: fade-in-full;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 3.5s;
+  }
 
+  & button {
+    margin-bottom: 2rem;
+    animation-name: fade-in-full;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 5s;
+  }
+}
 @keyframes slide-in-right {
   from {
     transform: translate(125vw, 0);
@@ -283,11 +296,17 @@ nav li:active {
   padding: 2em;
   grid-area: text;
 }
+.media-card .paragraphs {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .media-card p {
   /* color: rgb(31, 14, 116); */
   font-weight: 100;
-  padding-bottom: 0.5em;
-  font-size: 2vmin;
+  font-size: 1.8vw;
+  margin-bottom: 0.5em;
 }
 .media-card a {
   color: rgb(255, 223, 211);
@@ -309,36 +328,114 @@ footer a:hover {
   text-shadow: 2px 2px 5px rgb(66, 96, 96);
   color: rgb(97, 235, 235);
 }
-@media (width < 600px) {
+.sr-only {
+  display: none;
+}
+/* small screens */
+@media (width < 400px) {
   .container {
     width: 100%;
   }
-  /* .firstblock {
-    grid-column: 1 / span 8;
-    grid-row: 3 / span 1;
+  .primary-nav {
+    transform: translateX(100%);
   }
 
-  .secondblock {
-    grid-column: 1 / span 8;
-    grid-row: 4 / span 1;
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+    transition: 300ms ease-in;
   }
-  .footer {
-    grid-column: 1/9;
-    grid-row: 5/6;
-  } */
+  .mobile-nav-toggle {
+    /* position: absolute; */
+
+    z-index: 1000;
+    /* width: 1rem; */
+    /* aspect-ratio: 1;
+    top: 0;
+    right: 0; */
+    display: block;
+
+    & .fa-bars {
+      display: block;
+      padding: 0;
+      /* font-size: 10vw; */
+      /* background: rgb(52, 17, 189); */
+    }
+    & .fa-xmark {
+      display: none;
+      padding: 0;
+      /* font-size: 10vw; */
+    }
+  }
+  nav {
+    font-family: "Courier New", Courier, monospace;
+    z-index: 500;
+    /* grid-area: nav; */
+    padding: 2rem 0;
+    background-color: rgba(0, 255, 255, 0.95);
+    position: fixed;
+    inset: 0 0 0 30%;
+    /* display: none; */
+    & ul {
+      list-style: none;
+      /* display: none; */
+    }
+    & li {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 6vw;
+      border: 1px solid whitesmoke;
+    }
+    & li:hover {
+      background-color: rgb(255, 255, 255);
+    }
+    & li:active {
+      background-color: rgb(201, 180, 180);
+    }
+  }
 }
-/* 
-@media (400px <= width <= 700px) {
-    body {
-      
+
+/* @media (400px <= width <= 700px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "hero"
+      "web"
+      "photo"
+      "design"
+      "writing"
+      "performance"
+      "installation"
+      "about"
+      "cta"
+      "footer";
+  }
+  nav {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 3.2vmin;
+    grid-area: nav;
+    background-color: rgba(0, 255, 255, 0.85);
+    & ul {
+      padding: 0px 0px;
+      list-style: none;
+      display: flex;
+    }
+    & li {
+      text-align: center;
+      border: 1px solid whitesmoke;
+    }
+    & li:hover {
+      background-color: rgb(255, 255, 255);
+    }
+    & li:active {
+      background-color: rgb(201, 180, 180);
     }
   }
-@media (700px < width ) {
-    body {
-   
-    }
-  } */
-/* styles from https://www.shapedivider.app/ */
+}
+@media (700px < width) {
+  body {
+  }
+} */
 
 @keyframes wavy-top {
   0% {

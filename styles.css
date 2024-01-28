@@ -363,7 +363,7 @@ footer {
       font-size: 20vw;
     }
   }
-  p {
+  .media-card p {
     font-size: clamp(10vw, 15vw, 20vw);
   }
   nav {

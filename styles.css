@@ -283,34 +283,34 @@ nav {
   grid-template-areas: "img text";
   grid-template-columns: 30% auto;
   gap: 2em;
-}
 
-.media-card img {
-  grid-area: img;
-  border-radius: 1em;
-  margin: 1em;
-  align-self: center;
-}
-.media-card .text {
-  color: whitesmoke;
-  padding: 2em;
-  grid-area: text;
-}
-.media-card .paragraphs {
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.media-card p {
-  /* color: rgb(31, 14, 116); */
-  font-weight: 100;
-  font-size: 1.8vw;
-  margin-bottom: 0.5em;
-}
-.media-card a {
-  color: rgb(255, 223, 211);
-  text-decoration: underline;
+  & img {
+    grid-area: img;
+    border-radius: 1em;
+    margin: 1em;
+    align-self: center;
+  }
+  & .text {
+    color: whitesmoke;
+    padding: 2em;
+    grid-area: text;
+  }
+  & .paragraphs {
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  & p {
+    /* color: rgb(31, 14, 116); */
+    font-weight: 100;
+    font-size: 1.8vw;
+    margin-bottom: 0.5em;
+  }
+  & a {
+    color: rgb(255, 223, 211);
+    text-decoration: underline;
+  }
 }
 footer {
   background-color: rgba(255, 127, 80, 0.3);
@@ -320,13 +320,13 @@ footer {
   grid-area: footer;
   padding: 1.5em;
   padding-bottom: 2em;
-}
-footer a {
-  color: rgb(66, 96, 96);
-}
-footer a:hover {
-  text-shadow: 2px 2px 5px rgb(66, 96, 96);
-  color: rgb(97, 235, 235);
+  & a {
+    color: rgb(66, 96, 96);
+  }
+  & a:hover {
+    text-shadow: 2px 2px 5px rgb(66, 96, 96);
+    color: rgb(97, 235, 235);
+  }
 }
 .sr-only {
   display: none;
@@ -349,25 +349,24 @@ footer a:hover {
 
     z-index: 1000;
     /* width: 1rem; */
-    /* aspect-ratio: 1;
-    top: 0;
-    right: 0; */
+    aspect-ratio: 1;
     display: block;
 
     & .fa-bars {
       display: block;
       padding: 0;
-      /* font-size: 10vw; */
-      /* background: rgb(52, 17, 189); */
+      font-size: 20vw;
     }
     & .fa-xmark {
       display: none;
       padding: 0;
-      /* font-size: 10vw; */
+      font-size: 20vw;
     }
   }
+  p {
+    font-size: clamp(10vw, 15vw, 20vw);
+  }
   nav {
-    font-family: "Courier New", Courier, monospace;
     z-index: 500;
     /* grid-area: nav; */
     padding: 2rem 0;
@@ -436,12 +435,3 @@ footer a:hover {
   body {
   }
 } */
-
-@keyframes wavy-top {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-2000px, 0, 0);
-  }
-}

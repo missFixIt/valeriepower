@@ -29,14 +29,7 @@
         <div>
           <button class="mobile-nav-toggle" aria-controls="primary-navigation">
             <span class="sr-only">Menu</span>
-            <span
-              class="fa-solid fa-bars"
-              aria-roledescription="Open Menu icon"
-            ></span
-            ><span
-              class="fa-solid fa-xmark"
-              aria-roledescription="Close Menu icon"
-            ></span>
+            <span class="fa-solid fa-bars"></span>
           </button>
         </div>
         <nav
@@ -46,13 +39,13 @@
           aria-expanded="false"
         >
           <ul>
-            <a href="#web"><li>Web</li></a>
-            <a href="#photo"><li>Photo</li></a>
-            <a href="#design"><li>Design</li></a>
-            <a href="#writing"><li>Writing</li></a>
-            <a href="#performance"><li>Performance</li></a>
-            <a href="#installation"><li>Installation</li></a>
-            <a href="#about"><li>About</li></a>
+            <li><a href="#web">Web</a></li>
+            <li><a href="#photo">Photo</a></li>
+            <li><a href="#design">Design</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#about">About</a></li>
           </ul>
         </nav>
       </header>
@@ -142,8 +135,11 @@
             </p>
             <p>I'll be putting up some galleries of my old work soon.</p>
           </div>
-          <a href="/photo"
-            ><span class="fa-solid fa-chevron-down see-more"></span
+          <a href="#photo"
+            ><span
+              class="fa-solid fa-chevron-down see-more"
+              data-expanded="false"
+            ></span
           ></a>
         </div>
       </section>
